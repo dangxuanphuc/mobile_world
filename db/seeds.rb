@@ -8,6 +8,7 @@ User.create!(name: "Admin",
   password: "admin111",
   password_confirmation: "admin111",
   role: 1,
+  admin: true,
   created_at: Time.zone.now)
  
 puts "Faker is generating data... Please wait..."

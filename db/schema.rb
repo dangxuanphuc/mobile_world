@@ -106,8 +106,10 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.string "email"
     t.string "phone_number"
     t.integer "role", default: 0
+    t.boolean "admin", default: false
     t.string "order_history"
     t.string "password_digest"
+    t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
