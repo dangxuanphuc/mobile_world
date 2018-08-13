@@ -8,7 +8,7 @@
 }
  
 body{
-  background-color: $gray2 !important;
+  background-color: $light-gray !important;
 }
  
 .home {
@@ -36,11 +36,13 @@ nav.navbar{
   height: 300px;
 }
 
-.left.carousel-control, .right.carousel-control{
+.left.carousel-control,
+.right.carousel-control{
   display: none;
 }
 
-.carousel:hover .left.carousel-control, .carousel:hover .right.carousel-control{
+.carousel:hover .left.carousel-control,
+.carousel:hover .right.carousel-control{
   display: block;
 }
 
@@ -175,14 +177,14 @@ img {vertical-align: middle;}
   font-weight: bold;
 }
 
-li{
+.nav.navbar-nav li{
   float: left;
   list-style: none;
   margin-right: 25px;
   font-size: 16px;
 }
 
-li a:hover{
+.nav.navbar-nav li a:hover{
   text-decoration: none;
 }
 
@@ -430,14 +432,86 @@ footer .fa-google:hover{color: $red2; opacity: 1;}
   height: 310px;
 }
 
-.hot-tablet .phone-product-left, .hot-phone .phone-product-left{
+.hot-tablet .phone-product-left,
+.hot-phone .phone-product-left{
   border-left: none;
 }
 
-.hot-tablet .phone-product-right:last-child, .hot-phone .phone-product-right:last-child{
+.hot-tablet .phone-product-right:last-child,
+.hot-phone .phone-product-right:last-child{
   border-right: none;
 }
 
 .increase_margin_top{
   margin-top: 80px;
+  color: black;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+ div#signup-tab .sign-up:hover{
+  opacity: 0.8;
+}
+ .navbar.navbar-fixed-top{
+  background-color: $yellow2;
+  height: 0;
+}
+ .navbar.navbar-fixed-top .nav.navbar-nav a,
+.navbar.navbar-fixed-top .navbar-brand{
+  color: black;
+}
+ .navbar.navbar-fixed-top .nav.navbar-nav a:hover{
+  background-color: $light-gray;
+}
+ @mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+ input {
+  height: auto !important;
+}
+ #myNavbar .nav.navbar-nav li{
+  margin-left: -25px;
+}
+ #myNavbar .nav.navbar-nav li:first-child,
+#myNavbar .nav.navbar-nav li#signin{
+  margin-left: 0;
+}
+ #error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 20px;
+  }
+}
+ .field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+ .glyphicon-shopping-cart{
+  font-size: 30px;
+  color: black;
+  margin-top: 8px;
+  margin-left: 30px;
+}
+ .badge{
+  margin-bottom: 12px;
+  margin-right: 10px;
+  background-color: black;
+}
+ .alert {
+  margin-top: 60px;
+  margin-bottom: 10px;
 }

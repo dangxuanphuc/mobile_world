@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_08_13_031407) do
 
-  create_table "cart_items", force: :cascade do |t|
+  create_table "cart_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "cart_id"
     t.integer "product_id"
     t.integer "quantity"
@@ -24,24 +24,24 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.index ["product_id"], name: "index_cart_items_on_product_id"
   end
 
-  create_table "carts", force: :cascade do |t|
+  create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "managers", force: :cascade do |t|
+  create_table "managers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
@@ -49,13 +49,13 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.index ["user_id"], name: "index_managers_on_user_id"
   end
 
-  create_table "manufactures", force: :cascade do |t|
+  create_table "manufactures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "payment_methods", force: :cascade do |t|
+  create_table "payment_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "expire_date"
     t.integer "user_id"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "category_id"
     t.integer "manufacture_id"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.index ["manufacture_id"], name: "index_products_on_manufacture_id"
   end
 
-  create_table "rates", force: :cascade do |t|
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.integer "product_id"
     t.integer "user_id"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "receipts", force: :cascade do |t|
+  create_table "receipts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "cart_id"
     t.integer "user_id"
     t.float "total_price"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.index ["user_id"], name: "index_receipts_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "username"
     t.string "name"
     t.string "address"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.string "phone_number"
     t.integer "role", default: 0
     t.string "order_history"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
