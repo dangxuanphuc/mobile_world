@@ -1,3 +1,40 @@
-<% provide :title, t("static_pages.phone.title") %>
-<h1 class="increase_margin_top"></h1>
-<div class="product-description"><h1><%= @product.name %></h1></div>
+<div class="product-description">
+  <% provide :title, @product.name + "- Chính hãng, cấu hình, gía bán" %>
+  <h1 class="increase_margin_top"></h1>
+  <div class="product-detail-title"><h2><%= @product.name %></h2></div>
+  <div class="product-content">
+    <img src="../images/phone/samsung-galaxy-a8-star-black.jpg" alt="samsung">
+    <div class="product-description-content">
+      <div class="well">
+        <h2>Thông tin sản phẩm</h2>
+        <p><%= @product.description %></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio necessitatibus perferendis, nesciunt sunt numquam architecto aperiam perspiciatis quae rerum eos ipsum exercitationem, a, adipisci voluptate ullam provident vitae, delectus deserunt.</p>
+        <span class="price-title">Giá tiền:</span> <span class="price"><%= number_to_currency @product.price %> ₫</span>
+
+        <%= button_to "Add To Cart", cart_items_path(product_id: @product.id), class: "btn btn-primary cart-btn" %>
+
+        <% if !logged_in? %>
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Cảnh báo</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Đăng nhập để được mua hàng</p>
+                </div>
+                <div class="modal-footer">
+                  <%= link_to "Đăng nhập", login_path ,class: "btn btn-default" %>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

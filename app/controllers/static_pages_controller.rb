@@ -10,4 +10,6 @@ class StaticPagesController < ApplicationController
   def accessory; end
 
   def sale; end
+
+  def show; end
 end

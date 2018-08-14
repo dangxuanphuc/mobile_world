@@ -1,0 +1,54 @@
+<% provide :title, t(".your_receipt") %>
+<div class="container text-center">
+  <div>
+    <div class="col-sm-12">
+      <div class="shopping-cart">
+        <h1 class="increase_margin_top"></h1>
+        <% if logged_in? %>
+          <% if @cart.cart_items.count == 0 %>
+            <p class="text-center">
+              <h3><%= t ".not_found_product" %></h3>
+              <%= link_to t(".back_home"), root_path %> 
+            </p>
+          <% else %>
+            <ul>
+              <% if !@cart_item.nil? && @cart_item.errors.any? %>
+                <div class="alert alert-danger">
+                  <ul>
+                    <% @cart_item.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <table class="table table-bordered table-striped">
+                <thead style="text-align: center;">
+                  <tr>
+                    <th><%= t "products.index.name" %></th>
+                    <th><%= t "products.index.quantity" %></th>
+                    <th><%= t "products.index.price" %></th>
+                    <th><%= t "products.index.delete_product" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @cart.cart_items.each do |cart_item| %>
+                    <tr>
+                      <td><%= cart_item.product.name %></td>
+                      <td>
+                        <span><%= link_to "", cart_items_reduce_path(id: cart_item.id), class: "glyphicon glyphicon-minus", method: :post %></span>
+                        <%= cart_item.quantity %>
+                        <span><%= link_to "", cart_items_add_path(id: cart_item.id), class: "glyphicon glyphicon-plus", method: :post %></span>
+                      </td>
+                      <td><%= number_to_currency(cart_item.total_price) %></td>
+                      <td><%= link_to t("products.index.delete"), cart_items_delete_path(id: cart_item.id), method: :delete, data: {confirm: t("users.user.sure")} %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </ul>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

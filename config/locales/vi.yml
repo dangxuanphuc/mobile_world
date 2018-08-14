@@ -41,7 +41,7 @@ vi:
             password:
               blank: "không được để trống."
               invalid: "không hợp lệ. Ít nhất 8 ký tự bao gồm cả chữ và số."
-   
+
   controllers:
     application_controllers:
       login_check: "Vui lòng đăng nhập để sử dụng tính năng!"
@@ -51,23 +51,18 @@ vi:
       updated_profile: "Hồ sơ đã được cập nhật"
     sessions_controller:
       invalid: "Tên đăng nhập hoặc mật khẩu không hợp lệ!"
-    products_controller:
-      add_success: "Thêm sản phẩm thành công"
-      not_found: "Không tìm thấy sản phẩm"
-  
+
   shared:
     error_messages:
       message: "Có"
       error: "lỗi xảy ra. Vui lòng kiểm tra và thử lại"
-  
+
   sessions:
     new:
       title: "Đăng nhập"
       remember: "Nhớ tài khoản của tôi?"
       sign_up: "Chưa có tài khoản? "
-    destroy:
-      title: "Đăng xuất"
-  
+
   static_pages:
     accessory:
       title: "Phụ kiện"
@@ -81,7 +76,7 @@ vi:
       title: "Khuyến mãi"
     tablet:
       title: "Máy tính bảng"
-  
+
   users:
     new:
       title: "Đăng ký"
@@ -101,7 +96,7 @@ vi:
     destroy:
       delete_success: "Xóa người dùng thành công"
       delete_fail: "Xóa người dùng thất bại"
-  
+
   layouts:
     header:
       profile: "Hồ sơ"
@@ -115,7 +110,7 @@ vi:
       laptop_title: "Máy tính xách tay, laptop"
       accessory_title: "Phụ kiện điện thoại, laptop, tablet"
       sale_title: "Laptop, máy tính bảng ưu đãi khủng giảm giá tới 20%"
-   
+
   views:
     pagination:
       first: "« Đầu tiên"
@@ -127,15 +122,17 @@ vi:
   products:
     index:
       all_products: "Tất cả sản phẩm"
-      name: "Tên"
-      category: "Mã chủng loại"
-      manufacture: "Mã hãng sản xuất"
+      name: "Tên sản phẩm"
+      category: "Chủng loại"
+      manufacture: "Hãng sản xuất"
       description: "Mô tả"
       price: "Giá tiền"
       quantity: "Số lượng"
       edit: "Sửa"
       delete: "Xóa"
+      delete_product: "Xóa sản phẩm"
       not_found: "Không tìm thấy sản phẩm nào"
+      total_price: "Tổng giá tiền"
       new: "Thêm sản phẩm"
     destroy:
       delete_success: "Xóa sản phẩm thành công"
@@ -150,5 +147,31 @@ vi:
       add_success: "Thêm sản phẩm thành công"
     show:
       not_found: "Không tìm thấy sản phẩm"
+      add_to_cart: "Thêm vào giỏ hàng"
     update:
       product_updated: "Cập nhật sản phẩm thành công"
+
+  carts:
+    index:
+      your_receipt: "Giỏ hàng của bạn"
+      not_found_product: "Bạn không có gì trong giỏ hàng"
+      back_home: "Quay lại trang chủ"
+      your_name: "Tên khách hàng"
+      your_address: "Địa chỉ"
+      your_phone: "Số điện thoại"
+      please: "Vui lòng đọc"
+      receipt: "và nhập mã giao dịch."
+      receipt_btn: "Nhập mã giao dịch"
+  
+  cart_items:
+    destroy:
+      delete_cart_item: "Xóa sản phẩm trong giỏ hàng thành công"
+
+  number:
+   currency:
+    format:
+      unit: ""
+      delimiter: "."
+      separator: ""
+      precision: 0
+      format: "%u%n"

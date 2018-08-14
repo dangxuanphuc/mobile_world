@@ -12,7 +12,16 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/manager", to: "users#manager"
+  get "/products", to: "products#index"
+  post "/cart_items", to: "cart_items#create"
+  delete "/carts", to: "carts#destroy"
+  get "/carts", to: "carts#index"
   
+  post "/cart_items/add", to: "cart_items#add_quantity"
+  post "/cart_items/reduce", to: "cart_items#reduce_quantity"
+  delete "/cart_items/delete", to: "cart_items#destroy"
+
   resources :users
   resources :products
+  resources :carts
 end

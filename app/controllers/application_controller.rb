@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
    
   before_action :set_locale
+  before_action :current_user, only: :current_cart
+  before_action :current_cart
   
   private
   
@@ -18,5 +20,23 @@ class ApplicationController < ActionController::Base
     return if logged_in?
     flash[:danger] = t ".login_check"
     redirect_to login_url
+  end
+
+  def current_user
+    @current_user = User.find_by id: session[:user_id]
+  end
+
+  def current_cart
+    if session[:cart_id]
+      cart = Cart.find_by user_id: session[:user_id]
+      cart.present? ? @current_cart = cart : session[:cart_id] = nil
+    else
+      @current_cart = Cart.create if current_user.nil?
+      @current_cart = Cart.new(user_id: current_user.id) unless
+        @current_cart.present?
+      session[:cart_id] = @current_cart.id
+      @current_cart.save
+      Cart.where(user_id: :nil).destroy_all
+    end
   end
 end
