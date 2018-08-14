@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get "/manager", to: "users#manager"
   
   resources :users
+  resources :products
 end

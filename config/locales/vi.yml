@@ -115,3 +115,18 @@ vi:
       previous: "‹ Trước"
       next: "Tiếp ›"
       truncate: "..."
+
+  products:
+    index:
+      all_products: "Tất cả sản phẩm"
+      name: "Tên"
+      category: "Mã chủng loại"
+      manufacture: "Mã hảng sản xuất"
+      description: "Mô tả"
+      price: "Giá tiền"
+      quantity: "Số lượng"
+      edit: "Sửa"
+      delete: "Xóa"
+    destroy:
+      delete_success: "Xóa sản phẩm thành công"
+      delete_fail: "Không thể xóa sản phẩm"

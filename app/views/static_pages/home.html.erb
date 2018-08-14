@@ -1,25 +1,25 @@
-<% provide :title, "Trang chủ" %>
-<div class="box">
-  <!-- slideshow -->
-  <div class="slideshow">
-    <div class="mySlides fade_slide">
-      <a href="#"><img src="images/slideshow/slide_show1.png" style="width:100%"></a>
-    </div>
+<% provide :title, t("static_pages.home.title") %>
+  <div class="box">
+    <!-- slideshow -->
+    <div class="slideshow">
       <div class="mySlides fade_slide">
-      <a href="#"><img src="images/slideshow/slide_show2.png" style="width:100%"></a>
-    </div>
-      <div class="mySlides fade_slide">
-      <a href="#"><img src="images/slideshow/slide_show3.png" style="width:100%"></a>
-    </div>
-      <div class="mySlides fade_slide">
-      <a href="#"><a href="#"><img src="images/slideshow/slide_show4.png" style="width:100%"></a>
-    </div>
-      <div class="mySlides fade_slide">
-      <a href="#"><img src="images/slideshow/slide_show5.png" style="width:100%"></a>
-    </div>
+        <a href="#"><img src="images/carousel/slideshow1.png" style="width:100%"></a>
       </div>
+      <div class="mySlides fade_slide">
+        <a href="#"><img src="images/carousel/slideshow2.png" style="width:100%"></a>
+      </div>
+      <div class="mySlides fade_slide">
+        <a href="#"><img src="images/carousel/slideshow3.png" style="width:100%"></a>
+      </div>
+      <div class="mySlides fade_slide">
+        <a href="#"><img src="images/carousel/slideshow4.png" style="width:100%"></a>
+      </div>
+      <div class="mySlides fade_slide">
+        <a href="#"><img src="images/carousel/slideshow5.png" style="width:100%"></a>
+      </div>
+    </div>
     <br>
-      <div class="slideshow_text">
+    <div class="slideshow_text">
       <span class="dot">
         Đặt OPPO Find X <br>Nhận Quà Siêu Xịn
       </span>
@@ -37,17 +37,14 @@
       </span>
     </div>
   </div>
-    <div class="cart">
-    <div class="panel panel-default">
-      <div class="panel-heading">Giỏ hàng</div>
-      <div class="panel-body">Chưa có gì trong giỏ hàng</div>
-    </div>
-  </div> <!-- end cart -->
-    <div class="advertise">
+  
+  <div class="advertise">
     <a href="#"><img src="images/advertise1.png" alt="Advertise"></a>
     <a href="#"><img src="images/advertise2.png" alt="Advertise"></a>
+    <a href="#"><img src="images/advertise4.png" alt="Advertise"></a>
   </div> <!-- end advertise -->
-    <div class="hot-phone">
+  
+  <div class="hot-phone">
     <div class="hot-top">
       <span class="hot-title">ĐIỆN THOẠI NỔI BẬT NHẤT</span>
     </div> <!-- end hot-top -->
@@ -99,9 +96,11 @@
           </div>
         </div> <!-- phone-product-right -->
       </div> <!-- end phone-product-top -->
-        <div class="phone-product-bottom">
+      <div class="phone-product-bottom">
         <div class="phone-product-left rebase-border">
-          <a href="#"><img src="images/products/samsung-galaxy-j7-plus.jpg" alt="Samsung"></a>
+          <div class="zoom-images">
+            <a href="#"><img src="images/products/samsung-galaxy-j7-plus.jpg" alt="Samsung"></a>
+          </div>
           <div class="phone-product-title">
             <div class="phone-title-left">
               <span>Galaxy J7+</span><br>
@@ -112,7 +111,9 @@
         </div>
         <div class="phone-product-right rebase-border">
           <div class="phone-product-right-top">
-            <a href="#"><img src="images/products/oppo-a83.jpg" alt="Samsung"></a>
+            <div class="zoom-images">
+              <a href="#"><img src="images/products/oppo-a83.jpg" alt="Samsung"></a>
+            </div>
             <label class="label-left discount">Giảm 500.000đ</label>
           </div>
           <div class="phone-product-right-title">
@@ -123,7 +124,9 @@
         </div> <!-- phone-product-right -->
         <div class="phone-product-right rebase-border">
           <div class="phone-product-right-top">
-            <a href="#"><img src="images/products/vivo-y71.jpg" alt="Samsung"></a>
+            <div class="zoom-images">
+              <a href="#"><img src="images/products/vivo-y71.jpg" alt="Samsung"></a>
+            </div>
             <span class="pay">Trả góp 0%</span>
           </div>
           <div class="phone-product-right-title">
@@ -134,7 +137,9 @@
         </div> <!-- phone-product-right -->
         <div class="phone-product-right rebase-border">
           <div class="phone-product-right-top">
-            <a href="#"><img src="images/products/samsung-galaxy-a6-plus-2018.jpg" alt="Samsung"></a>
+            <div class="zoom-images">
+              <a href="#"><img src="images/products/samsung-galaxy-a6-plus-2018.jpg" alt="Samsung"></a>
+            </div>
             <span class="pay">Trả góp 0%</span>
           </div>
           <div class="phone-product-right-title">
@@ -146,14 +151,17 @@
       </div> <!-- end phone-product-bottom -->
     </div> <!-- end phone-product -->
   </div> <!-- end hot-phone -->
-    <div class="hot-tablet">
+  
+  <div class="hot-tablet">
     <div class="hot-top">
       <span class="hot-title">TABLET - LAPTOP NỔI BẬT NHẤT</span>
     </div> <!-- end hot-top -->
       <div class="hot-product">
       <div class="phone-product-top">
         <div class="phone-product-left">
-          <a href="#"><img src="images/products/hp-pavilion-x360.jpg" alt="HP"></a>
+          <div class="zoom-images">
+            <a href="#"><img src="images/products/hp-pavilion-x360.jpg" alt="HP"></a>
+          </div>
           <div class="phone-product-title">
             <div class="phone-title-left">
               <span>HP Pavilion x360 ba080TU i3</span><br>
@@ -166,7 +174,9 @@
         </div>
         <div class="phone-product-right">
           <div class="phone-product-right-top">
-            <a href="#"><img src="images/products/hp-envy-13.jpg" alt="HP"></a>
+            <div class="zoom-images">
+              <a href="#"><img src="images/products/hp-envy-13.jpg" alt="HP"></a>
+            </div>
             <span class="pay">Trả góp 0%</span>
           </div>
           <div class="phone-product-right-title">
@@ -177,7 +187,9 @@
         </div> <!-- phone-product-right -->
         <div class="phone-product-right">
           <div class="phone-product-right-top">
-            <a href="#"><img src="images/products/acer-swift.jpg" alt="Acer"></a>
+            <div class="zoom-images">
+              <a href="#"><img src="images/products/acer-swift.jpg" alt="Acer"></a>
+            </div>
             <span class="pay">Trả góp 0%</span>
           </div>
           <div class="phone-product-right-title">
@@ -188,7 +200,9 @@
         </div> <!-- phone-product-right -->
         <div class="phone-product-right">
           <div class="phone-product-right-top">
-            <a href="#"><img src="images/products/ipad-6th-wifi-cellular.jpg" alt="iPad"></a>
+            <div class="zoom-images">
+              <a href="#"><img src="images/products/ipad-6th-wifi-cellular.jpg" alt="iPad"></a>
+            </div>
             <span class="pay">Trả góp 0%</span>
           </div>
           <div class="phone-product-right-title">
@@ -200,13 +214,14 @@
       </div> <!-- end phone-product-top -->
     </div> <!-- end hot-product -->
   </div> <!-- end hot-tablet -->
-    <div class="phukien">
+  
+  <div class="phukien">
     <div class="hot-top">
       <span class="hot-title">PHỤ KIỆN GIÁ RẺ</span>
     </div> <!-- end hot-top -->
     <div class="products">
       <div class="phone-product-right product-child">
-        <div class="phone-product-right-top">
+        <div class="phone-product-right-top zoom-images">
           <a href="#"><img src="images/products/pin-sac-du-phong-polymer-10000mah.jpg" alt="iPad"></a>
         </div>
         <div class="phone-product-right-title">
@@ -215,7 +230,7 @@
         </div> <!-- phone-product-right -->
       </div>
       <div class="phone-product-right product-child">
-        <div class="phone-product-right-top">
+        <div class="phone-product-right-top zoom-images">
           <a href="#"><img src="images/products/loa-bluetooth-mifa.jpg" alt="loa"></a>
           <span class="pay">Giảm 35%</span>
         </div>
@@ -226,7 +241,7 @@
         </div> <!-- phone-product-right -->
       </div>
       <div class="phone-product-right product-child">
-        <div class="phone-product-right-top">
+        <div class="phone-product-right-top zoom-images">
           <a href="#"><img src="images/products/ipad-6th-wifi-cellular.jpg" alt="iPad"></a>
           <span class="pay">Trả góp 0%</span>
         </div>
@@ -236,7 +251,7 @@
         </div> <!-- phone-product-right -->
       </div>
       <div class="phone-product-right product-child">
-        <div class="phone-product-right-top">
+        <div class="phone-product-right-top zoom-images">
           <a href="#"><img src="images/products/the-nho-microsd-8gb.jpg" alt="the nho"></a>
           <span class="pay">Giảm 25%</span>
         </div>
@@ -247,7 +262,7 @@
         </div> <!-- phone-product-right -->
       </div>
       <div class="phone-product-right product-child">
-        <div class="phone-product-right-top">
+        <div class="phone-product-right-top zoom-images">
           <a href="#"><img src="images/products/tai-nghe-chup-tai-kanen-ip.jpg" alt="tai nghe"></a>
           <span class="pay">Giảm 35%</span>
         </div>

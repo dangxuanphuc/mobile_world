@@ -6,15 +6,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "thegioimobile", root_path, class: "navbar-brand" %>
+      <%= link_to image_tag("logo.png"), root_path, class: "navbar-brand", title: t(".home_title") %>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><%= link_to t("static_pages.phone.title"), phone_path %></li>
-        <li><%= link_to t("static_pages.tablet.title"), tablet_path %></li>
-        <li><%= link_to t("static_pages.laptop.title"), laptop_path %></li>
-        <li><%= link_to t("static_pages.accessory.title"), accessory_path %></li>
-        <li><%= link_to t("static_pages.sale.title"), sale_path %></li>
+        <li><%= link_to t("static_pages.phone.title"), phone_path, title: t(".phone_title") %></li>
+        <li><%= link_to t("static_pages.tablet.title"), tablet_path, title: t(".tablet_title") %></li>
+        <li><%= link_to t("static_pages.laptop.title"), laptop_path, title: t(".laptop_title") %></li>
+        <li><%= link_to t("static_pages.accessory.title"), accessory_path, title: t(".accessory_title") %></li>
+        <li><%= link_to t("static_pages.sale.title"), sale_path, title: t(".sale_title") %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" action="">
