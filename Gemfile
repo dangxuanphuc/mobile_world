@@ -5,8 +5,8 @@ ruby "2.5.1"
 
 gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
-gem "bootstrap-sass", "~> 3.2.0"
 gem "bootstrap-kaminari-views"
+gem "bootstrap-sass", "~> 3.2.0"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker"
@@ -15,7 +15,7 @@ gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "kaminari"
 gem "puma", "~> 3.11"
-gem "rails", "~> 5.2.1"
+gem "rails", "~> 5.2.0"
 gem "rails-i18n"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
@@ -35,7 +35,14 @@ group :development do
 end
 
 group :production do
-  gem "pg"
+  gem "pg", "0.20.0"
+  gem "fog", "1.42"
+end
+
+group :test do
+  gem "capybara", ">= 2.15", "< 4.0"
+  gem "chromedriver-helper"
+  gem "selenium-webdriver"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,0 +1,28 @@
+<% provide :title, t(".all_receipts") %>
+<h2 class="increase_margin_top"><%= t(".all_receipts") %></h2>
+
+<div class="receipts_box">
+  <%= paginate @receipts, theme: "twitter-bootstrap-3" %>
+  <table class="table table-bordered table-striped">
+    <thead style="text-align: center;">
+      <tr>
+        <th><%= t ".receipt" %></th>
+        <th><%= t ".cart" %></th>
+        <th><%= t "carts.index.your_name" %></th>
+        <th><%= t "activerecord.attributes.user.address" %></th>
+        <th><%= t "receipts.new.payment_code" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @receipts.each do |receipt| %>
+        <tr>
+          <td><%= link_to receipt.id, receipt %></td>
+          <td><%= link_to receipt.cart_id, @cart %></td>
+          <td><%= receipt.user.name %></td>
+          <td><%= receipt.user.address %></td>
+          <td><%= receipt.payment_code %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

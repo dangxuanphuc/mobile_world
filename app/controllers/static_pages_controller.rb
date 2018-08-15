@@ -12,4 +12,6 @@ class StaticPagesController < ApplicationController
   def sale; end
 
   def show; end
+
+  def payment; end
 end

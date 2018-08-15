@@ -1,12 +1,10 @@
 class User < ApplicationRecord
-  enum role: {customer: 0, staff: 1}
-
   attr_reader :remember_token
 
   has_many :receipts, dependent: :destroy
-  has_many :payment_methods, dependent: :destroy
+  has_many :payment_code, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :rates, dependent: :destroy
+  # has_many :rates, dependent: :destroy
   has_many :managers
   has_one :cart
 
@@ -30,17 +28,15 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
   validates :phone_number, presence: true,
     format: {with: VALID_PHONE_NUMBER_REGEX}
-  has_secure_password
   validates :password, presence: true,
     format: {with: VALID_PASSWORD_REGEX}, allow_nil: true
-
   has_secure_password
 
   def remember
     @remember_token = User.new_token
     update_attributes remember_digest: User.digest(remember_token)
   end
-   
+
   def authenticated? remember_token
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
@@ -49,11 +45,11 @@ class User < ApplicationRecord
   def forget
     update_attributes remember_digest: nil
   end
-   
+
   def current_user? user
     user == self
   end
-   
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -63,7 +59,7 @@ class User < ApplicationRecord
              end
       BCrypt::Password.create(string, cost: cost)
     end
-     
+
     def new_token
       SecureRandom.urlsafe_base64
     end

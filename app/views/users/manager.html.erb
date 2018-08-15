@@ -1,6 +1,9 @@
 <% provide :title, t(".manager") %>
 <h1 class="increase_margin_top"><%= t ".manager" %></h1>
-<div class="well manager">
-  <h3><%= link_to t(".all_users"), users_path %></h3>
-  <h3><%= link_to t(".all_products"), products_path %></h3>
+<div class="col-md-7 col-md-offset-3">
+  <div class="well manager">
+    <h3><%= link_to t(".all_users"), users_path %></h3>
+    <h3><%= link_to t(".all_products"), products_path %></h3>
+    <h3><%= link_to t("receipts.index.all_receipts"), receipts_path %></h3>
+  </div>
 </div>

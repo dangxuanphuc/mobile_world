@@ -6,7 +6,7 @@ class CreateReceipts < ActiveRecord::Migration[5.2]
       t.decimal :total_price
       t.boolean :status
       t.datetime :transaction_time
-      t.string :payment_method
+      t.string :payment_code
       
       t.timestamps
     end

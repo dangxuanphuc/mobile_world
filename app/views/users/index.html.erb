@@ -1,11 +1,12 @@
 <% provide :title, t(".all_users") %>
 <h2 class="increase_margin_top"><%= t ".all_users" %></h2>
- <ul class="users">
+
+<ul class="users">
   <%= paginate @users, theme: "twitter-bootstrap-3" %>
   <table class="table table-bordered table-striped">
     <thead style="text-align: center;">
       <tr>
-        <th><%= t "activerecord.attributes.user.username" %></th>
+        <th><%= t "activerecord.attributes.user.name" %></th>
         <th><%= t "activerecord.attributes.user.email" %></th>
         <th><%= t "activerecord.attributes.user.address" %></th>
         <% if current_user.admin? %>

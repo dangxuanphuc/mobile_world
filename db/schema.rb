@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.integer "cart_id"
     t.integer "product_id"
     t.integer "quantity"
-    t.float "price"
-    t.float "total_price"
+    t.decimal "price", precision: 10
+    t.decimal "total_price", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
@@ -55,21 +55,13 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "payment_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "expire_date"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "category_id"
     t.integer "manufacture_id"
     t.string "picture"
     t.string "description"
-    t.float "price"
+    t.decimal "price", precision: 10
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -89,10 +81,10 @@ ActiveRecord::Schema.define(version: 2018_08_13_031407) do
   create_table "receipts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "cart_id"
     t.integer "user_id"
-    t.float "total_price"
+    t.decimal "total_price", precision: 10
     t.boolean "status"
     t.datetime "transaction_time"
-    t.string "payment_method"
+    t.string "payment_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_receipts_on_cart_id"

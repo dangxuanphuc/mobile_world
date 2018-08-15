@@ -1,14 +1,15 @@
 <% provide :title, t(".title") %>
 <h2 class="increase_margin_top"><%= t ".title" %></h2>
- <div class="row">
+
+<div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="well">
       <%= form_for :session, url: login_path do |f| %>
-        
+
         <%= f.label :username, t("activerecord.attributes.session.username") %>
         <%= f.text_field :username, class: "form-control",
           placeholder: t("activerecord.attributes.session.username") %>
-        
+
         <%= f.label :password, t("activerecord.attributes.session.password") %>
         <%= f.password_field :password, class: "form-control",
           placeholder: t("activerecord.attributes.session.password") %>
@@ -17,10 +18,10 @@
           <%= f.check_box :remember_me %>
           <span><%= t ".remember" %></span>
         <% end %>
-        
+
         <%= f.submit t(".title"), class: "btn btn-info" %>
       <% end %>
-      
+
       <br><p><%= t ".sign_up" %><%= link_to t("users.new.title"), signup_path %></p>
     </div>
   </div>

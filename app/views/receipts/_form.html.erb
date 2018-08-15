@@ -1,0 +1,9 @@
+<%= form_for @receipt do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  
+  <%= f.label :payment_code, t("receipts.new.payment_code") %>
+  <%= f.text_field :payment_code, class: "form-control", required: true,
+    placeholder: t("receipts.new.payment_code") %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-info" %>
+<% end %>

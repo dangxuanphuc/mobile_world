@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :manufacture
   has_many :comments
-  has_many :rates
+  # has_many :rates
   has_many :cart_items, dependent: :destroy
   has_many :carts, through: :cart_items
 
@@ -10,4 +10,6 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :quantity, presence: true
+  # validates :picture, presence: true
+  # mount_uploader :picture, PictureUploader
 end

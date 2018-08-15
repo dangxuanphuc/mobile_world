@@ -45,6 +45,29 @@
                   <% end %>
                 </tbody>
               </table>
+              <div class="pull-right">
+                <h4 style="margin-right: 60px;"><%= t "products.index.total_price" %>: <span class="bold_info"><%= number_to_currency(@cart.sub_total) %></span></h4>
+                <button class="btn btn-primary pull-right" style="margin-right: 110px;" data-toggle="modal" data-target="#myModal"><%=  t "products.index.receipt" %></button>
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title"><%=  t "products.index.receipt" %></h2>
+                      </div>
+                      <div class="modal-body">
+                        <p><%= t ".your_name" %>: <span style="font-weight: bold;"><%= current_user.name %></span></p>
+                        <p><%= t ".your_address" %>: <span style="font-weight: bold;"><%= current_user.address %></span></p>
+                        <p><%= t ".your_phone" %>: <span style="font-weight: bold;"><%= current_user.phone_number %></span></p>
+                        <p><%= t ".please" %> <%= link_to "hướng dẫn này", payment_path, target: :_blank %> <%= t ".receipt" %></p>
+                      </div>
+                      <div class="modal-footer">
+                        <%= link_to t(".receipt_btn"), myreceipt_path, class: "btn btn-default" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </ul>
           <% end %>
         <% end %>
