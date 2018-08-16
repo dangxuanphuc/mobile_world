@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 class="increase_margin_top"></h2>
+  <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  <div class="row">
+    <h2 style="margin-left: 20px;">Có <b><%= @products.total_count %></b> kết quả</h2>
+    <% @products.each do |product| %>
+      <div class="col-md-3">
+        <div class="well text-center item-recipe">
+          <%= link_to product.name, "/products/#{product.id}" %>
+          <div class="row">
+            <%= image_tag(product.picture, class:
+              "img-responsive col-md-8 col-md-offset-2", size: "100x100") %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

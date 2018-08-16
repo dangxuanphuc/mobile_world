@@ -10,6 +10,9 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :quantity, presence: true
-  # validates :picture, presence: true
+  validates :picture, presence: true
   # mount_uploader :picture, PictureUploader
+
+  scope :search, ->(product){where "name LIKE ?", "%#{product}%"}
+  scope :sort_by_name, ->{order name: :desc}
 end

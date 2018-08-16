@@ -18,7 +18,6 @@ class ReceiptsController < ApplicationController
     @receipt.status = true
     if @receipt.save
       flash[:success] = t ".success"
-      @current_cart.destroy
       redirect_to @receipt
     end
   end

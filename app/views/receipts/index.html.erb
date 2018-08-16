@@ -17,7 +17,7 @@
       <% @receipts.each do |receipt| %>
         <tr>
           <td><%= link_to receipt.id, receipt %></td>
-          <td><%= link_to receipt.cart_id, @cart %></td>
+          <td><%= link_to receipt.cart_id, @carts %></td>
           <td><%= receipt.user.name %></td>
           <td><%= receipt.user.address %></td>
           <td><%= receipt.payment_code %></td>
