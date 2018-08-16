@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :managers
   has_one :cart
 
+  ratyrate_rater
+
   before_save{username.downcase!}
   before_save{email.downcase!}
 

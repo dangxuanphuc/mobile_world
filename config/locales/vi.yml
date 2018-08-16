@@ -163,7 +163,7 @@ vi:
       please: "Vui lòng đọc"
       receipt: "và nhập mã giao dịch."
       receipt_btn: "Nhập mã giao dịch"
-
+  
   cart_items:
     destroy:
       delete_cart_item: "Xóa sản phẩm trong giỏ hàng thành công"
@@ -175,10 +175,9 @@ vi:
     index:
       all_receipts: "Danh sách hóa đơn"
       cart: "Mã giỏ hàng"
-      receipt: "Mã hóa đơn"
     create:
       success: "Bạn đã thanh toán thành công. Vui lòng chờ xác nhận."
-    show:
+    show: 
       receipt: "Hóa đơn"
 
   number:

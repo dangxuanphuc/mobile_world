@@ -175,7 +175,6 @@ en:
     index:
       all_receipts: "Danh sách hóa đơn"
       cart: "Mã giỏ hàng"
-      receipt: "Mã hóa đơn"
     create:
       success: "Bạn đã thanh toán thành công. Vui lòng chờ xác nhận."
     show:
