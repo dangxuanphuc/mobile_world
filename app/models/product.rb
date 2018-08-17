@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category
   belongs_to :manufacture
-  has_many :comments
+  has_many :comments, dependent: :destroy
   # has_many :rates
   has_many :cart_items, dependent: :destroy
   has_many :carts, through: :cart_items

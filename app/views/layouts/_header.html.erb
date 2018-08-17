@@ -19,7 +19,7 @@
       <ul class="nav navbar-nav navbar-right">
         <%= form_for :product, url: search_path, class: "navbar-form navbar-left", id: "myForm",
           method: :get do |form| %>
-          <%= text_field_tag :product, params[:product], class: "form-control", placeholder: "Search" %>
+          <%= text_field_tag :product, params[:product], class: "form-control", placeholder: "Search", required: true %>
           <%= submit_tag "Tìm kiếm", name: nil, class: "btn btn-default" %>
         <% end %>
         <% if logged_in? %>

@@ -5,7 +5,7 @@
     <h2><%= @product.name %></h2>
     <%= rating_for @product, "quality", disable_after_rate: true %>
     <%= social_share_button_tag(@product.name, url: "https://mobileworldhus.herokuapp.com", desc: @product.name) %>
-    <img src="<%= @product.picture %>" alt="products" style="width: 500px; margin-left: 100px;">
+    <img src="<%= @product.picture %>" alt="products" style="width: 400px; margin-left: 100px;">
     <div class="product-description-content">
       <div class="well">
         <h2>Thông tin sản phẩm</h2>
@@ -54,6 +54,5 @@
       </div>
     </div>
   </div>
-</div>
-
+  
 <%= javascript_include_tag "ratyrate.js", "data-turbolinks-track": false %>

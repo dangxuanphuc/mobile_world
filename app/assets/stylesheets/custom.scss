@@ -13,7 +13,7 @@ body{
 }
 
 .home {
-  width: 95% !important;
+  width: 91% !important;
   margin: auto;
 }
 
@@ -338,7 +338,7 @@ label.discount:before{
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -o-transition: all .2s linear;
-  -transition: all .2s linear;
+  transition: all .2s linear;
   color: black;
   content: '▲';
   opacity: 0.7;
@@ -373,7 +373,7 @@ footer{
   width: 1205px;
   height: 250px;
   float: left;
-  margin: 20px 42px;
+  margin: 20px 70px;
 }
 
 footer .col-sm-4 img{
@@ -720,13 +720,13 @@ input[type="submit"].btn.btn-default {
   width: 80px;
   position: relative;
   top: -41px;
-  right: 60px;
+  right: 85px;
 }
 
 li#signin, li.dropdown {
   position: relative;
   top: -83px;
-  left: 90px;
+  left: 50px;
 }
 
 li.dropdown{
