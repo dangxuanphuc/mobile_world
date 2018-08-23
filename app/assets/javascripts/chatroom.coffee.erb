@@ -1,0 +1,118 @@
+$(document).ready =>
+  popupWrapper = $('.popup-wrapper')
+  popupTrigger = $('.popup-trigger')
+  # open the live chat widget if clicked
+  $('.popup-head').click ->
+    popupWrapper.addClass('collapse')
+    popupTrigger.removeClass('collapse')
+    return
+
+  # close the live chat widget if clicked
+  $('.popup-trigger').click ->
+    popupWrapper.removeClass('collapse')
+    popupTrigger.addClass('collapse')
+    return
+
+  # if the user's name and email is successfully submitted, hide the form and show the chat interface in the widget
+  $('#start-chat-form').on 'ajax:success', (data) ->
+    chatroom = data.detail[0]
+    $('.chat-form').removeClass('collapse')
+    $('.start-chat-wrapper').addClass('collapse')
+    $('.chat-wrapper').removeClass('collapse')
+    $('#chat-form #name').val(chatroom.name)
+    $('#chat-form #chatroom_id').val(chatroom.id)
+    getChats chatroom.id
+    $('#start-chat-form')[0].reset()
+    return
+  getChats = (id) ->
+    token = $('meta[name="csrf-token"]').attr('content')
+    $.ajax
+      url: 'chatrooms/' + id
+      type: 'get'
+      beforeSend: (xhr) ->
+        xhr.setRequestHeader 'X-CSRF-Token', token
+        return
+      success: (data) ->
+        return
+    return
+
+  # update the user's chat with new chat messages
+  updateChat = (data) ->
+    if data.chatroom_id == parseInt($('input#chatroom_id').val())
+      $('.chats').append """
+        <small class="chat-username">#{data.name}</small>
+        <div class="chat-bubble-wrapper d-block">
+          <div class="chat-bubble">
+            <p class="m-0 chat-message">#{data.message}</p>
+          </div>
+        </div>
+      """
+    return
+
+  # if the user's chat message is successfully sent, reset the chat input field
+  $('#chat-form').on 'ajax:success', (data) ->
+    chat = data.detail[0]
+    $('#chat-form')[0].reset()
+    return
+
+  # function for displaying chat messages that belong to chat selcted in the admin sidebar
+  loadAdminChat = (chatArray) ->
+    $('.admin-chats').html ""
+    $('input#chatroom_id').val(chatArray.chats[0].chatroom_id)
+    $.map(chatArray.chats, (chat) ->
+      $('.admin-chats').append """
+        <small class="chat-username">#{chat.name}</small>
+        <div class="chat-bubble-wrapper d-block">
+          <div class="chat-bubble">
+            <p class="m-0 chat-message">#{chat.message}</p>
+          </div>
+        </div>
+      """
+      return
+    )
+    return
+
+  # if the available chat in the sidebar is clicked, call the function that displays it's messages
+  $('body').on 'ajax:success', '.sidebar-chat', (data) ->
+    chat = data.detail[0]
+    loadAdminChat chat
+    return
+
+  # function to update admin's chat with new chat messages
+  updateAdminChat = (chat) ->
+    if chat.chatroom_id == parseInt($('input#chatroom_id').val())
+      $('.admin-chats').append """
+        <small class="chat-username">#{chat.name}</small>
+        <div class="chat-bubble-wrapper d-block">
+          <div class="chat-bubble bg-dark">
+            <p class="m-0 chat-message">#{chat.message}</p>
+          </div>
+        </div>
+      """
+    return
+
+  # function to update the available chats in the sidebar
+  updateAdminChatrooms = (chatroom) ->
+    $('.sidebar').append """
+      <div class="dashboard-sidebar-chat">
+        <a class="sidebar-chat" data-remote="true" href="/chats/#{chatroom.id}">#{chatroom.email}</a>
+      </div>
+    """
+    return
+    
+  # if admin's chat is successfully  sent, clear the chat input field
+  $('#admin-chat-form').on 'ajax:success', (data) ->
+    chat = data.detail[0]
+    $('#admin-chat-form')[0].reset()
+    return
+
+  pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>',
+    cluster: '<%= ENV["PUSHER_CLUSTER"] %>'
+    encrypted: true)
+  channel = pusher.subscribe('chat')
+  channel.bind 'new-chat', (data) ->
+    updateChat data
+    updateAdminChat data
+  channel.bind 'new-chatroom', (data) ->
+    updateAdminChatrooms data
+    return

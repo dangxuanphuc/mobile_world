@@ -27,8 +27,12 @@ Rails.application.routes.draw do
 
   post "/rate", to: "rater#create"
 
+  get "/dashboard", to: "chats#index"
+
   resources :users
   resources :carts
   resources :products
   resources :receipts
+  resources :chats
+  resources :chatrooms
 end

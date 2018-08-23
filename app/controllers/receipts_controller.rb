@@ -14,12 +14,12 @@ class ReceiptsController < ApplicationController
     @receipt = Receipt.new receipt_params
     @receipt.cart_id = current_cart.id
     @receipt.user = current_user
-    # @receipt.total_price = @current_cart.total_price
     @receipt.status = true
     if @receipt.save
       flash[:success] = t ".success"
       redirect_to @receipt
     end
+    CartItem.destroy_all
   end
 
   def show; end

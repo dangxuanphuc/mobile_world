@@ -1,0 +1,28 @@
+<h2 class="increase_margin_top"></h2>
+<div class="full-page position-relative">
+  <div class="col-3 col-md-2 full-page side-bar">
+    <% @chatrooms.each do |chatroom| %>
+      <% if chatroom.chats.any? %>
+        <div class="dashboard-sidebar-chat bg-info">
+          <%= link_to chatroom.email, chat_path(id: chatroom.id), remote: true, class: "sidebar-chat" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-9 col-md-10 full-page container-message">
+    <h5 class="mt-4">👈 <%= t ".select_acc" %></h5>
+    <div class="admin-chat-wrapper">
+      <h3 class="user-email mt-5"></h3>
+      <div class="chat-form">
+        <div class="admin-chats"></div>
+        <%= form_with( scope: :chat, url: chats_path, format: :json, id: "admin-chat-form") do |form| %>
+          <div class="field">
+            <%= form.text_field :message, id: :message, class: "form-control", required: true, placeholder: t(".enter_message") %>
+            <%= form.hidden_field :name, id: :name, value: "Quản trị viên" %>
+            <%= form.hidden_field :chatroom_id, id: :chatroom_id %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

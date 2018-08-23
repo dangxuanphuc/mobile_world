@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery
 //= require jquery.raty
+//= require popper
 //= require bootstrap-sprockets
 //= require effect
 //= require slideshow

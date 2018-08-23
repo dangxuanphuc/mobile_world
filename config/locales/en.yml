@@ -93,6 +93,7 @@ en:
       manager: "Quản lý hệ thống"
       all_users: "Danh sách người dùng"
       all_products: "Danh sách sản phẩm"
+      chat_user: "Chat với khách hàng"
     destroy:
       delete_success: "Xóa người dùng thành công"
       delete_fail: "Xóa người dùng thất bại"
@@ -156,7 +157,7 @@ en:
     index:
       your_receipt: "Giỏ hàng của bạn"
       not_found_product: "Bạn không có gì trong giỏ hàng"
-      back_home: "Quay lại trang chủ"
+      back_home: "Tiếp tục mua hàng"
       your_name: "Tên khách hàng"
       your_address: "Địa chỉ"
       your_phone: "Số điện thoại"
@@ -179,6 +180,19 @@ en:
       success: "Bạn đã thanh toán thành công. Vui lòng chờ xác nhận."
     show:
       receipt: "Hóa đơn"
+
+  chats:
+    index:
+      select_acc: "Chọn một tài khoản để tải tin nhắn"
+      enter_message: "Nhập tin nhắn"
+
+  chatrooms:
+    index:
+      support_online: "Hỗ trợ online"
+      close_chat: "Đóng cửa sổ chat"
+      your_name: "Nhập tên của bạn"
+      your_email: "Nhập email của bạn"
+      start_chat: "Bắt đầu chat"
 
   number:
    currency:

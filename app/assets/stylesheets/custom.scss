@@ -2,6 +2,7 @@
 @import 'bootstrap';
 @import 'color.scss';
 @import 'products.scss';
+@import 'chats.scss';
 
 * {
   margin: 0;
@@ -709,7 +710,6 @@ a:hover{
   margin-bottom: 10px;
 }
 
-
 input#product {
   position: relative;
   right: 270px;
@@ -720,7 +720,7 @@ input[type="submit"].btn.btn-default {
   width: 80px;
   position: relative;
   top: -41px;
-  right: 85px;
+  right: 60px;
 }
 
 li#signin, li.dropdown {
