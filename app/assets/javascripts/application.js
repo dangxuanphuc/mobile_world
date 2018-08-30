@@ -14,7 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
-//= require jquery.raty
 //= require popper
 //= require bootstrap-sprockets
 //= require effect
@@ -22,4 +21,3 @@
 //= require scroll_top
 //= require_tree .
 //= require social-share-button
-//= require ratyrate

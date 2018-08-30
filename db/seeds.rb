@@ -265,9 +265,9 @@ Product.create!(name: "Móc dán điện thoại OSMIA RingCK039", category_id: 
 Product.create!(name: "Sạc dây Nokia đầu nhỏ 1 m eSaver X032", category_id: "4", manufacture_id: "1",
   picture: "https://res.cloudinary.com/mobile-world/image/upload/v1533431035/accessory/sac-day-nokia-dau-nho-esaver.jpg",
   description: "Sạc dây Nokia đầu nhỏ 1 m eSaver X032", price: "400000", quantity: "100")
-Product.create!(name: "Cáp 2 đầu Type C Micro 1m eValu Spanker B Xanh dương", category_id: "4", manufacture_id: "1",
+Product.create!(name: "Cáp 2 đầu Type C Micro 1m eValu", category_id: "4", manufacture_id: "1",
   picture: "https://res.cloudinary.com/mobile-world/image/upload/v1533431033/accessory/cap-2-dau-type-c-micro-1m-evalu.jpg",
-  description: "Cáp 2 đầu Type C Micro 1m eValu Spanker B Xanh dương", price: "90000", quantity: "100")
+  description: "Cáp 2 đầu Type C Micro 1m eValu", price: "90000", quantity: "100")
 Product.create!(name: "Mobell Tab 8 Pro", category_id: "2", manufacture_id: "15",
   picture: "https://res.cloudinary.com/mobile-world/image/upload/v1533431053/tablet/mobell-tab-8-pro.jpg",
   description: "Mobell Tab 8 Pro", price: "2990000", quantity: "100")

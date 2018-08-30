@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
+    
     return if logged_in?
     flash[:danger] = t ".login_check"
     redirect_to login_url

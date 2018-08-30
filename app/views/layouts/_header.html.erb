@@ -47,6 +47,9 @@
                 <li><%= link_to edit_user_path(current_user) do %>
                   <span class="glyphicon glyphicon-cog"></span> <%= t ".setting" %>
                 <% end %></li>
+                <li><%= link_to chatrooms_path do %>
+                  <span class="glyphicon glyphicon-send"></span> <%= t ".chat" %>
+                <% end %></li>
               <% end %>
               <li><%= link_to logout_path, method: :delete do %>
                   <span class="glyphicon glyphicon-log-out"></span> <%= t ".destroy" %>

@@ -2,13 +2,9 @@ class User < ApplicationRecord
   attr_reader :remember_token
 
   has_many :receipts, dependent: :destroy
-  has_many :payment_code, dependent: :destroy
-  has_many :comments, dependent: :destroy
-  # has_many :rates, dependent: :destroy
+  has_many :payment_code
   has_many :managers
   has_one :cart
-
-  ratyrate_rater
 
   before_save{username.downcase!}
   before_save{email.downcase!}
@@ -40,6 +36,7 @@ class User < ApplicationRecord
   end
 
   def authenticated? remember_token
+    
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end

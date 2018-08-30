@@ -39,6 +39,7 @@ class ChatsController < ApplicationController
   end
 
   def logged_in_user
+    
     return if logged_in?
     store_location
     flash.now[:danger] = t "controllers.application_controllers.login_check"

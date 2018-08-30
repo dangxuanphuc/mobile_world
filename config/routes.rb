@@ -25,8 +25,6 @@ Rails.application.routes.draw do
   post "/cart_items/reduce", to: "cart_items#reduce_quantity"
   delete "/cart_items/delete", to: "cart_items#destroy"
 
-  post "/rate", to: "rater#create"
-
   get "/dashboard", to: "chats#index"
 
   resources :users

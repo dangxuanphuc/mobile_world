@@ -104,6 +104,7 @@ vi:
       manager: "Quản lý hệ thống"
       users: "Thành viên"
       setting: "Chỉnh sửa hồ sơ"
+      chat: "Phòng chat"
       destroy: "Đăng xuất"
       home_title: "Về trang chủ thegioimobile.com"
       phone_title: "Điện thoại di động, smartphone"
@@ -202,3 +203,9 @@ vi:
       separator: ""
       precision: 0
       format: "%u%n"
+
+  social_share_button:
+    share_to: "Share to %{name}"
+    facebook: "facebook"
+    twitter: "twitter"
+    google_plus: "google plus"
