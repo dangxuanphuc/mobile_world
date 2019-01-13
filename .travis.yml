@@ -1,0 +1,10 @@
+addons:
+  mysql2: 0.5.2
+dist: trusty
+language: ruby
+rvm:
+  - 2.5.3
+before_install:
+  - mysql -e 'CREATE DATABASE mobile_world_test;'
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
